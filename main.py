@@ -14,8 +14,7 @@ class main(ctk.CTkFrame):
         super().__init__(parent)
 
         #Add your own api key here
-        self.API_KEY = "Your Api Key"
-
+        self.API_KEY = "4df1ee20234521fe81b2178076612157"
         self.TIMEZONE = pytz.timezone("Europe/Berlin")
         self.TIME = datetime.now(self.TIMEZONE)
         self.DAY = self.TIME.strftime("%A")
@@ -27,7 +26,7 @@ class main(ctk.CTkFrame):
 
         #Getting the data from the api
         self.get_stats()
-      
+       
 
         #getting and resizing the main image
         self.icon_url = f"http://openweathermap.org/img/wn/{self.icon}.png"
@@ -60,10 +59,12 @@ class main(ctk.CTkFrame):
         self.middle_left_frame = ctk.CTkFrame(self, bg_color=self.bg_color_conf, height=20, width=100)
         self.middle_left_frame.pack(side="top", anchor="w", pady=6, padx=6)
         
+
         self.status_date_time_ctk = ctk.CTkLabel(master=self.middle_left_frame, text=f"{self.weather}  {self.DAY}, {self.TIME.strftime("%d.%m, %H:%M")}", bg_color=self.bg_color_conf, text_color="white", font=("Arial", 20))
         self.status_date_time_ctk.pack()
         
-        self.update_time()    
+        self.update_time()
+        
 
         #main frame for stats
         self.main_stats = ctk.CTkFrame(self, fg_color=self.bg_color_conf, height=20, width=40)
@@ -108,8 +109,8 @@ class main(ctk.CTkFrame):
 
         self.stats_windspeed = ctk.CTkLabel(self.stats, fg_color=self.bg_color_conf, text=f"Windspeed {self.windspeed}KpH")
         self.stats_windspeed.pack()
-
-
+        self.update_stats()
+            
 
     def get_stats(self):
         self.response = requests.get(self.url).json()
@@ -125,17 +126,17 @@ class main(ctk.CTkFrame):
         self.humidty = self.response['main']['humidity']
         self.precipitation = self.response['clouds']['all']
         self.windspeed = self.response['wind']['speed'] 
-        self.after(1000000, self.update_stats)
+        self.after(300000, self.get_stats)
 
     def update_stats(self):
-        self.status_date_time_ctk.configure(text=f"{self.weather}  {self.DAY}, {self.TIME.strftime("%d.%m, %H:%M")}")
+        self.status_date_time_ctk.configure(text=f"{self.weather}  {self.DAY}")
         self.main_icon.configure(image=self.icon_img_tk)
         self.temp.configure(text=f"{self.temp_celcius:.0F}°C")
         self.stats_max_min_temps.configure(text=f"High {self.max_celcius:.0F}°C    Low {self.min_celcius:.0F}°C")
         self.stats_humidtiy.configure(text=f"Humidity {self.humidty}%")
         self.stats_precipitation.configure(text=f"Precipitation {self.precipitation}%")
         self.stats_windspeed.configure(text=f"Windspeed {self.windspeed}KpH")
-        self.get_stats()
+        self.after(60000, self.update_stats)
         
 
 
@@ -176,6 +177,10 @@ class main(ctk.CTkFrame):
 
     #Updates the Time show in self.status_data_time_ctk every second
     def update_time(self):
+        self.TIMEZONE = pytz.timezone("Europe/Berlin")
+        self.TIME = datetime.now(self.TIMEZONE)
+        self.DAY = self.TIME.strftime("%A")
         self.status_date_time_ctk.configure(text=f"{self.weather}  {self.DAY}, {self.TIME.strftime("%d.%m, %H:%M")}") 
         self.after(1000, self.update_time)
+
 
