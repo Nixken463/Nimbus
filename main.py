@@ -14,7 +14,7 @@ class main(ctk.CTkFrame):
         super().__init__(parent)
 
         #Add your own api key here
-        self.API_KEY = "4df1ee20234521fe81b2178076612157"
+        self.API_KEY = "Your Api Key"
 
         self.TIMEZONE = pytz.timezone("Europe/Berlin")
         self.TIME = datetime.now(self.TIMEZONE)
