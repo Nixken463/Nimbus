@@ -1,0 +1,62 @@
+{
+    "English": {
+        "lang": "en",
+        "high": "high",
+        "low": "low",
+        "humidity": "humidity",
+        "precipitation": "precipitation",
+        "windspeed": "windspeed",
+        "Key": {
+            "standard": "Use standard Key",
+            "own": "Use your own Key",
+            "placeholder": "API_Key"
+        },
+        "City": "Enter your City",
+        "Save": "Save",
+        "save_error": {
+            "wrong_city": "The city you entered was not found. Please check the spelling and try again.",
+            "api_key": "The API key you provided is invalid. Please check your API key and try again.",
+            "blank": "Error: The field can't be blank"
+        }
+    },
+    "Deutsch": {
+        "lang": "de",
+        "high": "max",
+        "low": "min",
+        "humidity": "Luftfeuchtigkeit",
+        "precipitation": "Niederschlag",
+        "windspeed": "Windgeschw.",
+        "Key": {
+            "standard": "Standard Schlüssel",
+            "own": "Eigener Schlüssel",
+            "placeholder": "API-Schlüssel"
+        },
+        "City": "Gib deine Stadt ein",
+        "Save": "Speichern",
+        "save_error": {
+            "wrong_city": "Die eingegebene Stadt wurde nicht gefunden. Bitte überprüfen Sie die Schreibweise und versuchen Sie es erneut.",
+            "api_key": "Der API-Schlüssel, den Sie angegeben haben, ist ungültig. Bitte überprüfen Sie Ihren API-Schlüssel und versuchen Sie es erneut.",
+            "blank": "Fehler: Das Feld darf nicht leer sein."
+        }
+    },
+    "Español": {
+        "lang": "es",
+        "high": "máx",
+        "low": "mín",
+        "humidity": "Humedad",
+        "precipitation": "Precipitación",
+        "windspeed": "Vel. viento.",
+        "Key": {
+            "standard": "Clave estándar",
+            "own": "Clave propia",
+            "placeholder": "Clave API"
+        },
+        "City": "Ingresa tu ciudad",
+        "Save": "Guardar",
+        "save_error": {
+            "wrong_city": "La ciudad ingresada no se encontró. Por favor, revise la ortografía e inténtelo de nuevo.",
+            "api_key": "La clave API que proporcionó no es válida. Por favor, revise su clave API e inténtelo de nuevo.",
+            "blank": "Error: El campo no puede estar vacío."
+        }
+    }
+}
