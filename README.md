@@ -16,3 +16,15 @@ How to Use Your Own API Key
 
 
 ![image](https://github.com/user-attachments/assets/8a18953d-08c9-46a7-b94d-c0a001b4db50)
+
+Dependencies: <br>
+
+Windows
+```zsh
+pip install requests pytz numpy matplotlib scipy pillow customtkinter
+```
+
+Arch Linux with yay
+```zsh
+yay -S python-requests python-pytz python-numpy python-matplotlib python-scipy python-pillow python-customtkinter
+```
