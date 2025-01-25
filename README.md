@@ -24,7 +24,8 @@ Windows
 pip install requests pytz numpy matplotlib scipy pillow customtkinter
 ```
 
-Arch Linux with yay
+Arch Linux 
 ```zsh
-yay -S python-requests python-pytz python-numpy python-matplotlib python-scipy python-pillow python-customtkinter
+sudo pacman -S python-requests python-pytz python-numpy python-matplotlib python-scipy python-pillow
+yay -S customtkinter
 ```
