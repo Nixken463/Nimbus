@@ -86,7 +86,7 @@ class settings(ctk.CTkFrame):
             self.API_KEY = self.api_entry.get()
             self.key_type = "own"
         else:
-            self.API_KEY = "56b85576fceba74eb55a2d77b0eb1334"
+            self.API_KEY = "4df1ee20234521fe81b2178076612157"
             self.key_type = "standard"
         self.CITY = self.city_entry.get().strip() 
         
