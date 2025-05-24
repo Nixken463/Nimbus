@@ -36,7 +36,8 @@ class main(ctk.CTkFrame):
 
       
 
-        #Add your own api key here
+        #Since it's a free API Code and I dont have ressources for a API server 
+        #I decided to keep the key in plain code although this is a bad practice
         self.API_KEY = "4df1ee20234521fe81b2178076612157"
         self.TIMEZONE_Name = self.tf.timezone_at(lat=self.lat, lng=self.lng)
         self.TIMEZONE = pytz.timezone(self.TIMEZONE_Name)
